@@ -43,7 +43,7 @@ ws://myserver.com/socket.io/?EIO=3&transport=websocket
 You can use GetUrlByHost for generating correct url
 */
 func Dial(url string, tr transport.Transport,reconnect bool) (*Client, error) {
-	c := &Client{}
+	c := &Client{url:url}
 	c.initChannel()
 	c.initMethods()
 
